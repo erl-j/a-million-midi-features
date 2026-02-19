@@ -1,12 +1,28 @@
-# midi-rubrics
+# a million midi features
 
 ```
- ╔╦╗╦╔╦╗╦  ╦═╗╦ ╦╔╗ ╦═╗╦╔═╗╔═╗
- ║║║║ ║║║  ╠╦╝║ ║╠╩╗╠╦╝║║  ╚═╗
- ╩ ╩╩═╩╝╩  ╩╚═╚═╝╚═╝╩╚═╩╚═╝╚═╝
+ ╔═╗  ╔╦╗╦╦  ╦  ╦╔═╗╔╗╔  ╔╦╗╦╔╦╗╦  ╔═╗╔═╗╔═╗╔╦╗╦ ╦╦═╗╔═╗╔═╗
+ ╠═╣  ║║║║║  ║  ║║ ║║║║  ║║║║ ║║║  ╠╣ ║╣ ╠═╣ ║ ║ ║╠╦╝║╣ ╚═╗
+ ╩ ╩  ╩ ╩╩╩═╝╩═╝╩╚═╝╝╚╝  ╩ ╩╩═╩╝╩  ╚  ╚═╝╩ ╩ ╩ ╚═╝╩╚═╚═╝╚═╝
 ```
 
 Feature extraction for MIDI. 50+ musical descriptors, no ML, one function call.
+
+![progress](https://img.shields.io/badge/features-50%20%2F%201%2C000%2C000-blue)
+
+> **this repo is vibecoded** 🤙
+
+---
+
+## concept
+
+This project is an experiment in **distilling a MIDI feature engineering suite from AI**. Instead of hand-writing every heuristic and threshold, we use AI to generate and iterate on a large set of interpretable, rule-based musical descriptors.
+
+Why this makes sense:
+
+- **Interpretable** — every feature is a named, readable number, not a learned embedding. You can inspect, debug, and trust it.
+- **Cheap** — pure NumPy + MIDI parsing, runs on any CPU in milliseconds. No GPU, no model weights, no inference cost.
+- **Scaling expert systems with AI** — humans are notoriously bad at scaling feature engineering. Writing 50+ well-calibrated musical heuristics by hand is tedious and error-prone. AI, on the other hand, can churn through domain knowledge and produce comprehensive rule sets quickly. The bet is that AI-assisted expert systems can reach a coverage and consistency that manual efforts rarely achieve.
 
 ---
 
@@ -177,6 +193,26 @@ python test_rubrics.py
 - `mido` - MIDI parsing
 - `numpy` - numerical operations
 - `rich` - terminal output (test script only)
+
+---
+
+## todo
+
+- [ ] benchmark on downstream tasks (music classification, genre detection, etc.)
+- [ ] 999,950 features to go
+
+---
+
+## cite
+
+```bibtex
+@software{jonason2026midirubrics,
+  author  = {Jonason, Nicolas},
+  title   = {midi-rubrics: AI-distilled MIDI feature engineering},
+  year    = {2026},
+  url     = {https://github.com/nicolasjonason/midi-rubrics}
+}
+```
 
 ---
 
